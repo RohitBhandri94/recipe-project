@@ -1,0 +1,13 @@
+<ea17-header (sendEventToAppParent)="catchEventFromHeaderChild($event)"></ea17-header>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="border border-dark">
+        <ea17-recipe *ngIf= "currentSelectedFeature === 'recipe'"></ea17-recipe>
+      </div>
+      <div class="border border-dark">
+        <ea17-shopping  *ngIf= "currentSelectedFeature === 'shopping'"></ea17-shopping>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-6">
+        <!-- <ea17-recipe-list (sendEventToParentRecipe)="catchEventFromChildList($event)"></ea17-recipe-list> -->
+        <ea17-recipe-list></ea17-recipe-list>
+    </div>
+    <div class="col-6">
+        <ea17-recipe-details *ngIf = "currentSelectedRecipe; else elsePart"
+            [catchRecipeDataFromParent] = "currentSelectedRecipe"></ea17-recipe-details>
+        <ng-template #elsePart>
+            <h3>
+                <i class="fa fa-hand-o-left" aria-hidden="true">
+                    Please choose a recipe from the list to see the details
+                </i>
+            </h3>
+        </ng-template>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<img [src]="recipe.imgData" alt="" class="w-50">
+<h1>{{recipe.name}}</h1>
+<p>
+  <span class="small">Description:
+  </span>{{recipe.description}}
+</p>
+<hr>
+<hr>
+<button class="btn btn-sm btn-info" (click)= "sendIngredient()">Send to Shopping List</button>
+<div class="list-group">
+  <div class="list-group-item my-ingredient-item" *ngFor= "let ingredient of recipe.ingredientList">
+    <div class="my-ingredient-item">
+      <div>
+        <img [src]="ingredient.img" alt="" class="ingredient-img mr-3">
+      </div>
+      <div>
+        <h6 class="m-0 p-0">{{ingredient.name}}</h6>
+        <p class="small m-0 p-0">( {{ingredient.brand}} )</p>
+      </div>
+    </div>
+
+    <div>
+      <h6>
+        QTY : <span class="small">{{ingredient.qty}}</span> | Price : <span class="small">{{ingredient.price | currency
+          :'INR' }}</span>
+      </h6>
+    </div>
+  </div>
+</div>
